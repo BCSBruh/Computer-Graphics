@@ -18,46 +18,46 @@ public class Assignment2 {
         of the other. Top circle is white and bottom is black. Finally two more circles
         act as the central dots.
          */
-//        Shape c1 = new Ellipse2D.Double(-100, -100, diameter, diameter);
-//        Shape arc1 = new Arc2D.Double(-99, -99, diameter-2, diameter-2, 90, 180, 2);
-//        Shape c2 = new Ellipse2D.Double(-49, -99, radius, radius);
-//        Shape c3 = new Ellipse2D.Double(-49, 0, radius, radius-1);
-//        Shape c4 = new Ellipse2D.Double(-radius/16, -radius/2, radius/12, radius/12);
-//        Shape c5 = new Ellipse2D.Double(-radius/16, radius/2, radius/12, radius/12);
-//
-//        //Creating the areas for each object in order to cut out and add pieces
-//        Area a1 = new Area(c1);
-//        Area arcArea1 = new Area(arc1);
-//        Area a2 = new Area(c2);
-//        Area a3 = new Area(c3);
-//        Area a4 = new Area(c4);
-//        Area a5 = new Area(c5);
-//
-//        //By subtracting the left semicircle and top circle I can create the white part of the Ying Yang
-//        a1.subtract(arcArea1);
-//        a1.subtract(a2);
-//
-//        //Adding the bottom circle and the small dot in the white top circle
-//        a1.add(a3);
-//        a1.add(a4);
-//
-//        //Creating the small dot in the bottom black circle
-//        a1.subtract(a5);
+        Shape c1 = new Ellipse2D.Double(-100, -100, diameter, diameter);
+        Shape arc1 = new Arc2D.Double(-99, -99, diameter-2, diameter-2, 90, 180, 2);
+        Shape c2 = new Ellipse2D.Double(-49, -99, radius, radius);
+        Shape c3 = new Ellipse2D.Double(-49, 0, radius, radius-1);
+        Shape c4 = new Ellipse2D.Double(-radius/16, -radius/2, radius/12, radius/12);
+        Shape c5 = new Ellipse2D.Double(-radius/16, radius/2, radius/12, radius/12);
 
-        Ellipse2D c1 = new Ellipse2D.Double(0, 0, 400, 400);
-        Ellipse2D c2 = new Ellipse2D.Double(200, 0, 400, 400);
-        Ellipse2D c3 = new Ellipse2D.Double(100, 200, 400, 400);
+        //Creating the areas for each object in order to cut out and add pieces
         Area a1 = new Area(c1);
+        Area arcArea1 = new Area(arc1);
         Area a2 = new Area(c2);
         Area a3 = new Area(c3);
-        Area a4 = new Area(c1);
-        a1.exclusiveOr(a2);
-        a2.subtract(a3);
-        a3.intersect(a1);
-        a4.intersect(a2);
-        a4.add(a3);
+        Area a4 = new Area(c4);
+        Area a5 = new Area(c5);
 
-        return a3;
+        //By subtracting the left semicircle and top circle I can create the white part of the Ying Yang
+        a1.subtract(arcArea1);
+        a1.subtract(a2);
+
+        //Adding the bottom circle and the small dot in the white top circle
+        a1.add(a3);
+        a1.add(a4);
+
+        //Creating the small dot in the bottom black circle
+        a1.subtract(a5);
+
+//        Ellipse2D c1 = new Ellipse2D.Double(0, 0, 400, 400);
+//        Ellipse2D c2 = new Ellipse2D.Double(200, 0, 400, 400);
+//        Ellipse2D c3 = new Ellipse2D.Double(100, 200, 400, 400);
+//        Area a1 = new Area(c1);
+//        Area a2 = new Area(c2);
+//        Area a3 = new Area(c3);
+//        Area a4 = new Area(c1);
+//        a1.exclusiveOr(a2);
+//        a2.subtract(a3);
+//        a3.intersect(a1);
+//        a4.intersect(a2);
+//        a4.add(a3);
+//
+        return a1;
     }
 
     public static Shape createSpirograph() {
