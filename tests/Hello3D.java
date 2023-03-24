@@ -1,4 +1,4 @@
-package chapter5;
+package tests;
 
 import java.awt.*;
 import java.applet.*;
